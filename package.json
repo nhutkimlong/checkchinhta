@@ -26,12 +26,14 @@
     "prettier": "office-addin-lint prettier",
     "signin": "office-addin-dev-settings m365-account login",
     "signout": "office-addin-dev-settings m365-account logout",
+    "prestart": "node scripts/update-manifest.js dev",
     "start": "office-addin-debugging start manifest.xml",
     "stop": "office-addin-debugging stop manifest.xml",
     "test": "npm run test:unit && npm run test:e2e",
     "test:e2e": "mocha -r ts-node/register test/end-to-end/*.ts",
     "test:unit": "mocha -r ts-node/register test/unit/*.test.ts",
     "validate": "office-addin-manifest validate manifest.xml",
+    "prebuild": "node scripts/update-manifest.js prod",
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {

@@ -68,10 +68,7 @@ module.exports = async (env, options) => {
             from: "assets/*",
             to: "assets/[name][ext][query]",
           },
-          {
-            from: "src/landing/installer.ps1",
-            to: "installer.ps1",
-          },
+
           {
             from: "src/landing/installer.cmd",
             to: "installer.cmd",
