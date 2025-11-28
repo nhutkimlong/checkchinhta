@@ -1,0 +1,385 @@
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    background-color: #f8f9fa;
+    color: #323130;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* App Header */
+.app-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e1dfdd;
+}
+
+.app-logo {
+    width: 48px;
+    height: 48px;
+    margin-right: 12px;
+}
+
+.app-title h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: #0078d4;
+}
+
+.app-title .subtitle {
+    margin: 2px 0 0 0;
+    font-size: 12px;
+    color: #605e5c;
+}
+
+.icon-btn {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #605e5c;
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.icon-btn:hover {
+    background-color: #edebe9;
+    color: #323130;
+}
+
+/* Settings Panel */
+.settings-panel {
+    background: #fff;
+    border: 1px solid #e1dfdd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    animation: slideDown 0.3s ease-out;
+}
+
+.settings-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.ms-TextField-field {
+    flex: 1;
+    border: 1px solid #8a8886;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 13px;
+}
+
+.small-btn {
+    min-width: 50px !important;
+    height: 32px !important;
+    padding: 0 12px !important;
+}
+
+.hint-text {
+    font-size: 11px;
+    color: #a19f9d;
+    margin: 0;
+}
+
+.status-msg {
+    font-size: 12px;
+    color: #107c10;
+    font-weight: 600;
+}
+
+/* Steps & Containers */
+.step-container {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* For scrollable content inside */
+}
+
+.section-title {
+    margin: 0 0 16px 0;
+    font-weight: 600;
+    color: #323130;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-btn {
+    width: 100%;
+    justify-content: center;
+    height: 44px;
+    font-size: 14px;
+}
+
+.action-btn i {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Result View */
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f3f2f1;
+}
+
+.result-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #323130;
+}
+
+.badge {
+    background: #eff6fc;
+    color: #0078d4;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#diff-view {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 4px;
+    margin-bottom: 16px;
+}
+
+.result-actions {
+    display: flex;
+    justify-content: center;
+    padding-top: 12px;
+    border-top: 1px solid #f3f2f1;
+}
+
+/* Error Cards */
+.error-card {
+    background: white;
+    border: 1px solid #edebe9;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.error-card:hover {
+    border-color: #c7e0f4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.error-header {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.label-error {
+    background: #fde7e9;
+    color: #a4262c;
+    border: 1px solid #f5b1b5;
+}
+
+.label-suggestion {
+    background: #dff6dd;
+    color: #107c10;
+    border: 1px solid #9fd89f;
+}
+
+.label-delete {
+    background: #f3f2f1;
+    color: #605e5c;
+    border: 1px solid #c8c6c4;
+}
+
+.error-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.error-context {
+    font-size: 13px;
+    color: #605e5c;
+    line-height: 1.4;
+}
+
+.word-change {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #f8f9fa;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.old-word {
+    color: #a4262c;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.new-word {
+    color: #107c10;
+}
+
+.fix-btn {
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-end;
+    margin-top: 8px;
+}
+
+.fix-btn:hover {
+    background: #106ebe;
+}
+
+/* Buttons General */
+.ms-Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ms-Button--primary {
+    background: #0078d4;
+    color: white;
+}
+
+.ms-Button--primary:hover {
+    background: #106ebe;
+}
+
+.ms-Button--hero {
+    background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+    color: white;
+}
+
+.ms-Button--hero:hover {
+    background: linear-gradient(135deg, #106ebe 0%, #004578 100%);
+    box-shadow: 0 4px 8px rgba(0, 120, 212, 0.3);
+}
+
+.ms-Button--default {
+    background: white;
+    border: 1px solid #8a8886;
+    color: #323130;
+}
+
+.ms-Button--default:hover {
+    background: #f3f2f1;
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #c7c7c7;
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a6a6a6;
+}

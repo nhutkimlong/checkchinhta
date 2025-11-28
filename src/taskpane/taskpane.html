@@ -1,0 +1,95 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!-- This file shows how to design a first-run page that provides a welcome screen to the user about the features of the add-in. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Check Chính Tả</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+    <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
+    <link rel="stylesheet"
+        href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css" />
+
+    <!-- Template styles -->
+    <link href="taskpane.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="ms-font-m ms-welcome ms-Fabric">
+    <header class="ms-welcome__header ms-bgColor-neutralLighter" style="display: none;">
+        <img width="90" height="90" src="../../assets/logo.png" alt="AI Check Chính Tả" title="AI Check Chính Tả" />
+        <h1 class="ms-font-su">AI Check Chính Tả</h1>
+    </header>
+    <section id="sideload-msg" class="ms-welcome__main">
+        <h2 class="ms-font-xl">Please sideload your add-in to see app body.</h2>
+    </section>
+    <main id="app-body" style="display: none;">
+        <div class="app-header">
+            <img src="../../assets/logo.png" alt="Logo" class="app-logo">
+            <div class="app-title">
+                <h2>AI Check Chính Tả</h2>
+                <p class="subtitle">Trợ lý biên tập thông minh</p>
+            </div>
+            <button id="settings-toggle" class="icon-btn" title="Cài đặt">
+                <i class="ms-Icon ms-Icon--Settings"></i>
+            </button>
+        </div>
+
+        <div id="settings-panel" class="settings-panel hidden">
+            <div class="settings-content">
+                <label class="ms-Label">Gemini API Key <span style="color:#a4262c">*</span>:</label>
+                <div class="input-group">
+                    <input id="api-key-input" class="ms-TextField-field" type="password"
+                        placeholder="Nhập Gemini API Key...">
+                    <button id="save-key-btn" class="ms-Button ms-Button--primary small-btn">Lưu</button>
+                </div>
+                <p class="hint-text">Bạn cần nhập API Key để sử dụng. <a href="https://aistudio.google.com/app/apikey"
+                        target="_blank">Lấy key tại đây</a>.</p>
+                <span id="save-status" class="status-msg"></span>
+            </div>
+        </div>
+
+        <div id="instruction-step" class="step-container fade-in">
+            <p class="section-title">Chọn chế độ kiểm tra:</p>
+
+            <div class="action-buttons">
+                <div role="button" id="check-selection-btn" class="ms-Button ms-Button--primary action-btn">
+                    <i class="ms-Icon ms-Icon--Edit"></i>
+                    <span class="ms-Button-label">Kiểm tra đoạn chọn</span>
+                </div>
+
+                <div role="button" id="check-all-btn" class="ms-Button ms-Button--hero action-btn">
+                    <i class="ms-Icon ms-Icon--Document"></i>
+                    <span class="ms-Button-label">Kiểm tra toàn bộ</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Area -->
+        <div id="result-step" class="step-container hidden fade-in">
+            <div class="result-header">
+                <h3>Kết quả phân tích</h3>
+                <span id="error-count" class="badge">0 lỗi</span>
+            </div>
+
+            <div id="diff-view" class="custom-scrollbar">
+                <!-- Diff will be injected here -->
+            </div>
+
+            <div class="result-actions">
+                <button id="cancel-btn" class="ms-Button ms-Button--default">
+                    <i class="ms-Icon ms-Icon--Back"></i>
+                    <span class="ms-Button-label">Quay lại</span>
+                </button>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cài đặt AI Check Chính Tả</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f2f1;
+            color: #323130;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0078d4;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #605e5c;
+        }
+
+        .step {
+            margin: 20px 0;
+            text-align: left;
+            background: #faf9f8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #0078d4;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0078d4;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #106ebe;
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: #0078d4;
+            border: 1px solid #0078d4;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #eff6fc;
+        }
+
+        code {
+            background: #e1dfdd;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="../../assets/logo.png" alt="Logo" width="80" style="margin-bottom: 20px;">
+        <h1>AI Check Chính Tả</h1>
+        <p>Công cụ kiểm tra chính tả tiếng Việt thông minh cho Microsoft Word.</p>
+
+        <div class="step">
+            <strong>Bước 1: Tải bộ cài đặt</strong>
+            <p>Tải file cài đặt tự động về máy tính của bạn.</p>
+            <div style="text-align: center;">
+                <a href="installer.cmd" class="btn" download>⬇️ Tải Installer (.cmd)</a>
+            </div>
+        </div>
+
+        <div class="step">
+            <strong>Bước 2: Chạy cài đặt</strong>
+            <p>1. Nhấn đúp vào file <code>installer.cmd</code> vừa tải.</p>
+            <p>2. Nếu Windows hỏi xác nhận, chọn <strong>Run anyway</strong> (Chạy bằng mọi giá).</p>
+            <p>3. Chờ thông báo "CAI DAT THANH CONG".</p>
+        </div>
+
+        <div class="step">
+            <strong>Bước 3: Mở trong Word</strong>
+            <p>1. Mở Word và chọn tab <strong>Insert</strong> (Chèn).</p>
+            <p>2. Chọn <strong>Add-ins</strong> (hoặc "Get Add-ins").</p>
+            <p>3. Chọn tab <strong>SHARED FOLDER</strong> (Thư mục chia sẻ).</p>
+            <p><em>(Lưu ý: Đây là tên mục trong Word, Add-in đã được cài vào máy của bạn)</em></p>
+            <p>4. Chọn <strong>AI Check Chính Tả</strong> và nhấn <strong>Add</strong>.</p>
+        </div>
+
+        <p style="font-size: 12px; margin-top: 30px; color: #a19f9d;">
+            *Lưu ý: Nếu gặp lỗi bảo mật khi chạy script, hãy mở PowerShell với quyền Admin và chạy lệnh:
+            <code>Set-ExecutionPolicy RemoteSigned</code>
+        </p>
+    </div>
+</body>
+
+</html>
